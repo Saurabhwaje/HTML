@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Registration</title>
+  <style>
+    body {
+      background-color: #f5f5f5;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    #parent {
+      display: flex;
+      height: 550px;
+      max-width: 1200px;
+      background: #fff;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    #img {
+      flex: 1;
+      background-image: url('/PROJECTS/proj5/images/DarkPix1582531837-fzp07t72ipi41.jpg');
+      background-size: cover;
+    }
+
+    #rhs {
+      flex: 1;
+      background-color: #f5f5f5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    #form {
+      text-align: center;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin: 10px 0;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    input[type="date"] {
+      border: 2px solid #ddd;
+      background-color: #fff;
+      color: #333;
+    }
+
+    select, input[type="submit"] {
+      background-color: #5e35b1;
+      color: #fff;
+      cursor: pointer;
+      border: none;
+    }
+
+    #but {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="parent">
+    <div id="img"></div>
+    <div id="rhs">
+      <div id="form">
+        <h1>Registration Info</h1>
+        <!-- NAME -->
+        <input type="text" name="" placeholder="Name" />
+        <!-- BIRTHDATE -->
+        <input type="date" value="birthday" placeholder="Birthdate" />
+        <!-- GENDER -->
+        <select name="">
+          <option value="" disabled selected>Gender</option>
+          <option value="">Male</option>
+          <option value="">Female</option>
+          <option value="">Other</option>
+        </select>
+        <!-- EMAIL -->
+        <input type="text" name="" placeholder="Email" />
+        <!-- PHONE -->
+        <input type="number" name="" placeholder="Phone" />
+        <!-- SUBMIT -->
+        <div id="but">
+          <input type="submit" value="Register" />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
