@@ -13,21 +13,22 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height: 45vh;
     }
 
     #parent {
       display: flex;
-      height: 550px;
+      flex-direction: column;
       max-width: 1200px;
-      background: #fff;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      /* background: #fff; */
+      /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); */
     }
 
     #img {
       flex: 1;
       background-image: url('/PROJECTS/proj5/images/DarkPix1582531837-fzp07t72ipi41.jpg');
       background-size: cover;
+      min-height: 300px;
     }
 
     #rhs {
@@ -45,6 +46,8 @@
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      max-width: 400px; /* Adjust the maximum width based on your design */
+      width: 100%;
     }
 
     h1 {
@@ -77,6 +80,21 @@
     #but {
       margin-top: 20px;
     }
+
+    /* Media query for smaller screens */
+    @media screen and (max-width: 600px) {
+      #parent {
+        flex-direction: column;
+      }
+
+      #img {
+        min-height: 200px;
+      }
+
+      #rhs {
+        padding: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -86,26 +104,41 @@
       <div id="form">
         <h1>Registration Info</h1>
         <!-- NAME -->
-        <input type="text" name="" placeholder="Name" />
+        <input type="text" id="name" placeholder="Name" />
         <!-- BIRTHDATE -->
-        <input type="date" value="birthday" placeholder="Birthdate" />
+        <input type="date" id="birthdate" placeholder="Birthdate" />
         <!-- GENDER -->
-        <select name="">
+        <select id="gender">
           <option value="" disabled selected>Gender</option>
-          <option value="">Male</option>
-          <option value="">Female</option>
-          <option value="">Other</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
         </select>
         <!-- EMAIL -->
-        <input type="text" name="" placeholder="Email" />
+        <input type="text" id="email" placeholder="Email" />
         <!-- PHONE -->
-        <input type="number" name="" placeholder="Phone" />
+        <input type="number" id="phone" placeholder="Phone" />
         <!-- SUBMIT -->
         <div id="but">
-          <input type="submit" value="Register" />
+          <input type="submit" value="Register" onclick="validateForm()" />
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    function validateForm() {
+      var name = document.getElementById("name").value;
+      var email = document.getElementById("email").value;
+      var phone = document.getElementById("phone").value;
+
+      if (name === "" || email === "" || phone === "") {
+        alert("Please fill out all the required fields.");
+      } else {
+        alert("Registration successful!");
+        // You can add further actions here, like submitting the form or redirecting the user.
+      }
+    }
+  </script>
 </body>
 </html>
